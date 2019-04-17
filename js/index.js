@@ -1,6 +1,6 @@
 // Your code goes here
 
-//custom alerts for each of the three buttons when clicked
+//custom alert for first button
 
 const btn = document.querySelectorAll('.btn');
 
@@ -8,16 +8,19 @@ btn[0].addEventListener('click', (event) => {
     alert("You are going to the hottest place in the world!");
 });
 
+//custom alert for second button
+
 btn[1].addEventListener('click', (event) => {
     alert("You are going to the most dangerous place in the world!");
 });
+
+//custom alert for third button
 
 btn[2].addEventListener('click', (event) => {
     alert("You are going to the worst place in the world! Good luck.");
 });
 
-//changes text color when your cursor goes over it. Currently does not go 'back' to the original,
-
+//changes text color and size when your cursor goes over it
 
 const paras = document.querySelectorAll('p');
 
@@ -65,7 +68,7 @@ paras[8].addEventListener('mouseenter', (event) => {
     event.target.style.color = 'green';
 });
 
-//below reverts the color and size to original after you move your mouse away
+//reverts the color and size of text to original after you move your mouse away
 
 paras.forEach(function(item) {
     returnToBlack(item);
@@ -78,43 +81,47 @@ function returnToBlack(item) {
     })};
 
 
-
-
-//When the page loads, it console logs a message
+//console log a message when the page is loaded
 
 window.addEventListener('load', (event) => {
     console.log('Congratulations, this page has finished loading!');
 });
 
-//hover over any image to triple its size
 
-const images = document.querySelector("img");
+//hover over any image to increase its size
 
-images[0].addEventListener("mouseover", (event) => event.target.style.transform = "scale(3.0)");
-images[0].addEventListener("mouseleave", (event) => event.target.style.transform = "scale(1.0)");
+const images = document.querySelectorAll("img");
 
-/*
-//double click the footer to change the background color to dodgerblue.
-//this code does not work yet
+images.forEach ( images => {
+    images.addEventListener("mouseover", (event) => event.target.style.transform = "scale(1.5)");
+});
+
+
+//reverts image back to orignal size after hover
+
+images.forEach ( images => {
+    images.addEventListener("mouseleave", (event) => event.target.style.transform = "scale(1.0)");
+});
+
+
+//console log a message when the mouse is moving
+
+const mouseHunt = document.querySelector(".home");
+
+mouseHunt.addEventListener("mousemove", event => {
+    console.log("Your mouse is moving again!!!");
+});
+
+//right click the header to change it's background color to green
+
+header = document.querySelector(".main-navigation");
+
+header.addEventListener("contextmenu", (event) => {
+    event.target.style.backgroundColor = "#00ff00";
+});
+
+// Right click the footer to change its background color to MediumTurquoise.
 
 footer = document.querySelector('.footer');
+footer.addEventListener('contextmenu', (e) => {e.target.style.backgroundColor = 'MediumTurquoise';});
 
-footer.addEventListener('dblclick', (event) => {
-    event.target.style.backgroundColor = "dodgerblue";
-});
-
-//non-functioning code at the moment
-
-const img = document.querySelectorAll('img');
-
-img[0].addEventListener('dblclick', (event) => {
-    event.target.style.width = '300%';
-});
-
-img[1].addEventListener('dblclick', (event) => {
-    event.target.style.width = '200%';
-});
-
-img[2].addEventListener('dblclick', (event) => {
-    event.target.style.width = '150%';
-});
