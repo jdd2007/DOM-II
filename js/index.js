@@ -112,16 +112,22 @@ mouseHunt.addEventListener("mousemove", event => {
     console.log("Your mouse is moving again!!!");
 });
 
-//right click the header to change it's background color to green
+//changes the header to green when you click with anything except the primary (top left) button
 
 header = document.querySelector(".main-navigation");
 
-header.addEventListener("contextmenu", (event) => {
+header.addEventListener("auxclick", (event) => {
     event.target.style.backgroundColor = "#00ff00";
 });
 
 // Right click the footer to change its background color to MediumTurquoise.
 
 footer = document.querySelector('.footer');
+
 footer.addEventListener('contextmenu', (e) => {e.target.style.backgroundColor = 'MediumTurquoise';});
 
+// logs a message with a scroll
+
+window.addEventListener("scroll", () => {
+    console.log("Somebody is scrolling");
+});
