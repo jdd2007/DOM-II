@@ -1,9 +1,8 @@
 // Your code goes here
 
+//custom alerts for each of the three buttons when clicked
 
 const btn = document.querySelectorAll('.btn');
-
-//custom alerts for each of the three buttons when clicked
 
 btn[0].addEventListener('click', (event) => {
     alert("You are going to the hottest place in the world!");
@@ -17,31 +16,10 @@ btn[2].addEventListener('click', (event) => {
     alert("You are going to the worst place in the world! Good luck.");
 });
 
-
-
-const img = document.querySelectorAll('img');
-
-//non-functioning code at the moment
-
-img[0].addEventListener('dblclick', (event) => {
-    event.target.style.width = '300%';
-});
-
-img[1].addEventListener('dblclick', (event) => {
-    event.target.style.width = '200%';
-});
-
-img[2].addEventListener('dblclick', (event) => {
-    event.target.style.width = '150%';
-});
-
-
-
+//changes text color when your cursor goes over it. Currently does not go 'back' to the original,
 
 
 const paras = document.querySelectorAll('p');
-
-//changes text color when your cursor goes over it. Currently does not go 'back' to the original,
 
 paras[0].addEventListener('mouseenter', (event) => {
     event.target.style.fontSize = '2rem';
@@ -106,4 +84,37 @@ function returnToBlack(item) {
 
 window.addEventListener('load', (event) => {
     console.log('Congratulations, this page has finished loading!');
+});
+
+//hover over any image to triple its size
+
+const images = document.querySelector("img");
+
+images[0].addEventListener("mouseover", (event) => event.target.style.transform = "scale(3.0)");
+images[0].addEventListener("mouseleave", (event) => event.target.style.transform = "scale(1.0)");
+
+/*
+//double click the footer to change the background color to dodgerblue.
+//this code does not work yet
+
+footer = document.querySelector('.footer');
+
+footer.addEventListener('dblclick', (event) => {
+    event.target.style.backgroundColor = "dodgerblue";
+});
+
+//non-functioning code at the moment
+
+const img = document.querySelectorAll('img');
+
+img[0].addEventListener('dblclick', (event) => {
+    event.target.style.width = '300%';
+});
+
+img[1].addEventListener('dblclick', (event) => {
+    event.target.style.width = '200%';
+});
+
+img[2].addEventListener('dblclick', (event) => {
+    event.target.style.width = '150%';
 });
